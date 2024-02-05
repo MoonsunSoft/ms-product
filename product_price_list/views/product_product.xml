@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="product_product_form_view" model="ir.ui.view">
+    <record id="product_product_pricelist_form_view" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='sales']" position="after">
                 <page name="productpricelist" string="Price List">
                     <field name="pricelist_product_product_ids"
-                        domain="[('product_id','=',self.id)]"
-                        widget="one2many_list">
+                    domain = "['|',('product_tmpl_id', '=', self.product_tmpl_id.id),('product_id', '=', self.id)]">
                         <tree string="Product Price List">
                             <field name="pricelist_id" />
                             <field name="name" />

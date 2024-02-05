@@ -8,7 +8,7 @@ class ProductTemplate(models.Model):
         "sale.order.line",
         "product_template_id",
         string="Sale Order Lines",
-        domain=[("state", "not in", ("cancel", "draft"))]
+        domain=[("state", "=", "sale")]
     )
 
 
@@ -19,5 +19,5 @@ class ProductProduct(models.Model):
         "sale.order.line",
         "product_id",
         string="Sale Order Lines",
-        domain=[("state", "not in", ("cancel", "draft"))],
+        domain=[("state", "=", "sale")],
     )
