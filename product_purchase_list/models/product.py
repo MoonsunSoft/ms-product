@@ -3,7 +3,7 @@ from odoo import fields, models
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
-
+    # this is purchase lines for product_templates
     purchase_order_product_template_line_ids = fields.One2many(
         "purchase.order.line",
         "product_template_id",
