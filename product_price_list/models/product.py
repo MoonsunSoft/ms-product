@@ -13,8 +13,7 @@ class ProductTemplate(models.Model):
                 ('product_id', 'in', self.product_variant_ids.ids),
             ('pricelist_id.active', '=', True),
         ],
-        string="Price List",
-        auto_join=True
+        string="Price List"
     )
 
 
@@ -25,8 +24,7 @@ class ProductProduct(models.Model):
         "product.pricelist.item",
         "product_id",
         compute="_compute_pricelist_product_ids",
-        string="Price List",
-        auto_join=True
+        string="Price List"
     )
 
     @api.depends('product_tmpl_id')
