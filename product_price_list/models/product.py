@@ -38,10 +38,14 @@ class ProductProduct(models.Model):
             product.pricelist_product_product_ids = self.env['product.pricelist.item'].search([
                 ('pricelist_id.active', '=', True),
                 '|',
+                '|',
                     '&',
                     ('product_tmpl_id', '=', product.product_tmpl_id.id),
                     ('product_id', '=', False),
                     '&',
                     ('product_tmpl_id', '=', product.product_tmpl_id.id),
+                    ('product_id', '=', product.id),
+                    '&',
+                    ('product_tmpl_id', '=', False),
                     ('product_id', '=', product.id),
             ])
