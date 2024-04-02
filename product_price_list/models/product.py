@@ -6,15 +6,20 @@ class ProductTemplate(models.Model):
     pricelist_product_template_ids = fields.One2many(
         "product.pricelist.item",
         "product_tmpl_id",
-        domain=lambda self: [
-            '&',
-                '|', 
-                ('product_tmpl_id', '=', self.id), 
-                ('product_id', 'in', self.product_variant_ids.ids),
-            ('pricelist_id.active', '=', True),
-        ],
+        compute="_compute_pricelist_product_template_ids",
         string="Price List"
     )
+
+    @api.depends('product_variant_ids')
+    def _compute_pricelist_product_template_ids(self):
+        for product in self:
+            product.pricelist_product_template_ids = self.env['product.pricelist.item'].search([
+                '&',
+                    '|', 
+                    ('product_tmpl_id', '=', product.id),
+                    ('product_id', 'in', product.product_variant_ids.ids),
+                ('pricelist_id.active', '=', True),
+            ])
 
 
 class ProductProduct(models.Model):
