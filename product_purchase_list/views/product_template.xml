@@ -9,12 +9,17 @@
                     <field name="purchase_order_product_template_line_ids"
                         domain="[('product_template_id','=',self.id)]">
                         <tree string="Purchase Order Lines">
-                            <field name="order_id"/>
-                            <field name="product_id"/>
+                            <field name="date_order" />
+                            <field name="partner_id" />
+                            <field name="order_id" />
+                            <field name="product_uom_qty" />
+                            <field name="qty_received" />
+                            <field name="qty_invoiced" />
                             <field name="price_unit"/>
-                            <field name="product_uom_qty"/>
-                            <field name="state" widget="badge"/>
-                            <field name="create_date"/>
+                            <field name="price_subtotal"/>
+                            <field name="price_tax"/>
+                            <field name="price_total"/>
+                            <field name="currency_id"/>
                         </tree>
                     </field>
                 </page>
