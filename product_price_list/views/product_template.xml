@@ -9,12 +9,10 @@
                     <field name="pricelist_product_template_ids">
                         <tree string="Product Price List" create="false">
                             <field name="pricelist_id" />
-                            <field name="name" />
-                            <field name="product_tmpl_id" />
-                            <field name="product_id"/>
-                            <field name="currency_id" />
-                            <field name="compute_price" />
-                            <field name="fixed_price" />
+                            <field name="price" />
+                            <field name="min_quantity" />
+                            <field name="date_start" />
+                            <field name="date_end" />
                         </tree>
                     </field>
                 </page>
