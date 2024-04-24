@@ -5,7 +5,7 @@
     "website": "https://www.MoonSun.au",
     "license": "AGPL-3",
     "category": "Products Price List",
-    "depends": ["base","website_sale"],
+    "depends": ["base","sale"],
     "data": [
        "views/product_template.xml",
        "views/product_product.xml",

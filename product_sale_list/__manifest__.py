@@ -5,7 +5,7 @@
     "website": "https://www.MoonSun.au",
     "license": "AGPL-3",
     "category": "Products Sale List",
-    "depends": ["base","website_sale"], # TODO Fardin check dependencies with stock waiting report in gmt project
+    "depends": ["base","sale","stock_move_waiting_report"], # TODO Fardin check dependencies with stock waiting report in gmt project
     "data": [
        "views/product_template.xml",
        "views/product_product.xml",
