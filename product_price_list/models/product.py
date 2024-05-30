@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 
+
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
@@ -15,11 +16,26 @@ class ProductTemplate(models.Model):
         for product in self:
             product.pricelist_product_template_ids = self.env['product.pricelist.item'].search([
                 '&',
-                    '|', 
-                    ('product_tmpl_id', '=', product.id),
-                    ('product_id', 'in', product.product_variant_ids.ids),
+                '|',
+                ('product_tmpl_id', '=', product.id),
+                ('product_id', 'in', product.product_variant_ids.ids),
                 ('pricelist_id.active', '=', True),
             ])
+            if product.pricelist_product_template_ids:
+                price = product.compute_price(
+                    product.id, product.pricelist_product_template_ids[0])
+                print(price)
+
+    @api.model
+    def compute_price(self, product_id, pricelist_id, quantity=1):
+        product = self.env['product.product'].browse(product_id)
+        pricelist = self.env['product.pricelist'].browse(pricelist_id)
+        if pricelist:
+            price = pricelist.get_product_price(
+                product, quantity, self.env.user.partner_id)
+        else:
+            price = product.lst_price
+        return price
 
 
 class ProductProduct(models.Model):
@@ -39,13 +55,13 @@ class ProductProduct(models.Model):
                 ('pricelist_id.active', '=', True),
                 '|',
                 '|',
-                    '&',
-                    ('product_tmpl_id', '=', product.product_tmpl_id.id),
-                    ('product_id', '=', False),
-                    '&',
-                    ('product_tmpl_id', '=', product.product_tmpl_id.id),
-                    ('product_id', '=', product.id),
-                    '&',
-                    ('product_tmpl_id', '=', False),
-                    ('product_id', '=', product.id),
+                '&',
+                ('product_tmpl_id', '=', product.product_tmpl_id.id),
+                ('product_id', '=', False),
+                '&',
+                ('product_tmpl_id', '=', product.product_tmpl_id.id),
+                ('product_id', '=', product.id),
+                '&',
+                ('product_tmpl_id', '=', False),
+                ('product_id', '=', product.id),
             ])

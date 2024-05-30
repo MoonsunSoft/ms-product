@@ -10,7 +10,7 @@
                         domain="[('product_id','=',self.id)]">
                         <tree string="Purchase Order Lines">
                             <field name="date_order" />
-                            <field name="partner_id" />
+                            <field name="partner_id" string="Supplier"/>
                             <field name="order_id" />
                             <field name="product_uom_qty" />
                             <field name="qty_received" />
