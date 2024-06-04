@@ -21,21 +21,6 @@ class ProductTemplate(models.Model):
                 ('product_id', 'in', product.product_variant_ids.ids),
                 ('pricelist_id.active', '=', True),
             ])
-            if product.pricelist_product_template_ids:
-                price = product.compute_price(
-                    product.id, product.pricelist_product_template_ids[0])
-                print(price)
-
-    @api.model
-    def compute_price(self, product_id, pricelist_id, quantity=1):
-        product = self.env['product.product'].browse(product_id)
-        pricelist = self.env['product.pricelist'].browse(pricelist_id)
-        if pricelist:
-            price = pricelist.get_product_price(
-                product, quantity, self.env.user.partner_id)
-        else:
-            price = product.lst_price
-        return price
 
 
 class ProductProduct(models.Model):
