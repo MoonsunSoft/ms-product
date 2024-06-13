@@ -11,7 +11,6 @@ class ProductTemplate(models.Model):
         domain=[("state", "=", "sale")]
     )
 
-
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
@@ -21,3 +20,9 @@ class ProductProduct(models.Model):
         string="Sale Order Lines",
         domain=[("state", "=", "sale")],
     )
+
+
+class SaleOrderLine(models.Model):
+    _inherit = "sale.order.line"
+
+    order_date = fields.Datetime(related="order_id.date_order")

@@ -8,16 +8,21 @@
                 <page name="saleproductlist" string="Sale List">
                     <field name="sale_order_product_product_line_ids"
                         domain="[('product_id','=',self.id)]">
-                        <tree string="Sale Order Lines">
-                            <field name="sale_order_line_date_order" />
-                            <field name="sale_order_line_team_id" />
-                            <field name="order_partner_id" />
+                        <tree string="Sale Order Lines" create="false">
+                            <field name="order_date" widget="date" />
                             <field name="order_id" />
-                            <field name="product_uom_qty" />
+                            <field name="order_partner_id" />
+                            <field name="name" />
+                            <field name="salesman_id" />
+                            <field name="product_uom_qty" string="Qty" />
                             <field name="qty_delivered" />
                             <field name="qty_invoiced" />
+                            <field name="qty_to_invoice" />
+                            <field name="product_uom" string="Unit of Measure"
+                                groups="uom.group_uom" />
+                            <field name="price_subtotal" sum="Total" widget="monetary" />
                             <field name="price_unit" />
-                            <field name="price_subtotal" />
+                            <field name="currency_id" column_invisible="True" />
                         </tree>
                     </field>
                 </page>
