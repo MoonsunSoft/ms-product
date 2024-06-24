@@ -9,20 +9,20 @@
                     <field name="sale_order_product_product_line_ids"
                         domain="[('product_id','=',self.id)]">
                         <tree string="Sale Order Lines" create="false">
-                            <field name="order_date" widget="date" />
-                            <field name="order_id" />
-                            <field name="order_partner_id" />
-                            <field name="name" />
-                            <field name="salesman_id" />
-                            <field name="product_uom_qty" string="Qty" />
-                            <field name="qty_delivered" />
-                            <field name="qty_invoiced" />
-                            <field name="qty_to_invoice" />
+                            <field name="order_date" widget="date" optional="show"/>
+                            <field name="order_id" optional="show"/>
+                            <field name="order_partner_id" optional="show"/>
+                            <field name="name" optional="show"/>
+                            <field name="salesman_id" optional="show"/>
+                            <field name="product_uom_qty" string="Qty" optional="show"/>
+                            <field name="qty_delivered" optional="show"/>
+                            <field name="qty_invoiced" optional="show"/>
+                            <field name="qty_to_invoice" optional="show"/>
                             <field name="product_uom" string="Unit of Measure"
-                                groups="uom.group_uom" />
-                            <field name="price_subtotal" sum="Total" widget="monetary" />
-                            <field name="price_unit" />
-                            <field name="currency_id" column_invisible="True" />
+                                groups="uom.group_uom" optional="show"/>
+                            <field name="price_subtotal" sum="Total" widget="monetary" optional="show"/>
+                            <field name="price_unit" optional="show"/>
+                            <field name="currency_id" column_invisible="True" optional="show"/>
                         </tree>
                     </field>
                 </page>
