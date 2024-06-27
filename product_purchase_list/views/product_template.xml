@@ -16,9 +16,9 @@
                             <field name="qty_received" />
                             <field name="qty_invoiced" />
                             <field name="price_unit"/>
-                            <field name="price_subtotal"/>
+                            <field name="price_subtotal" sum="Total"/>
                             <field name="price_tax"/>
-                            <field name="price_total"/>
+                            <field name="price_total" sum="Total"/>
                             <field name="currency_id"/>
                         </tree>
                     </field>
