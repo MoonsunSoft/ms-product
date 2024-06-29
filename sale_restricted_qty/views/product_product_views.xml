@@ -13,7 +13,7 @@
             <xpath expr="//page[@name='sales']/group[@name='sale']" position="after">
                 <group
                     name="sale_restricted_qty"
-                    string="Sale restricted qty"
+                    string="Sale restricted qty product variant"
                     colspan="4"
                 >
                     <group name="sale_min_qty_gr" string="Sale Min qty">
