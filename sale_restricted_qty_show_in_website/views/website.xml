@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="template_show_qty_min_max" name="Show Min AND Max" customize_show="True"
+        active="True" inherit_id="website_sale.product">
+        <xpath expr="//t[@t-placeholder='select']" position="before">
+            <p>
+                <span> Min Qty : <t t-out="product.sale_min_qty" />
+                </span>
+                <br />
+                <span> Max Qty : <t t-out="product.sale_max_qty" />
+                </span>
+                <br />
+            </p>
+        </xpath>
+    </template>
+</odoo>
