@@ -32,7 +32,8 @@ class ProductTemplate(models.Model):
                 (self.env.ref('base.view_model_data_form').id, 'form')]
         else:
             action['view_mode'] = 'tree,form'
-            action['domain'] = [('id', 'in', ext_ids)]
+            action['domain'] = [('res_id', '=', self.id),
+                                ('model', '=', self._name)]
         return action
 
 
@@ -67,5 +68,6 @@ class ProductProduct(models.Model):
                 (self.env.ref('base.view_model_data_form').id, 'form')]
         else:
             action['view_mode'] = 'tree,form'
-            action['domain'] = [('id', 'in', ext_ids)]
+            action['domain'] = [('res_id', '=', self.id),
+                                ('model', '=', self._name)]
         return action
