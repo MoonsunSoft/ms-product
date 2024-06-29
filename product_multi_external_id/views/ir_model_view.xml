@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_model_data_form_inherit_module_name" model="ir.ui.view">
+        <field name="name">view.model.data.form.inherit</field>
+        <field name="model">ir.model.data</field>
+        <field name="inherit_id" ref="base.view_model_data_form"/>
+        <field name="arch" type="xml">
+            <field name="res_id" position="after">
+                <field name="partner_id"></field>
+            </field>
+        </field>
+    </record>
+    <record id="view_model_data_list_inherit_module_name" model="ir.ui.view">
+        <field name="name">view.model.data.list.inherit</field>
+        <field name="model">ir.model.data</field>
+        <field name="inherit_id" ref="base.view_model_data_list"/>
+        <field name="arch" type="xml">
+            <field name="res_id" position="before">
+                <field name="partner_id"></field>
+            </field>
+        </field>
+    </record>
+
+</odoo>
