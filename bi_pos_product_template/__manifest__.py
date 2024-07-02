@@ -5,7 +5,7 @@
     "name": "POS Product Variants/template in Odoo",
     "version": "17.0.0.4",
     "category": "Point of Sale",
-    "depends": ['base', 'sale', 'point_of_sale'],
+    "depends": ['base', 'sale', 'point_of_sale', 'stock_sms'],
     "author": "BrowseInfo",
     'summary': 'App point of sales product template POS Product Multi variant pos product attributes pos product variants pos product multiple template point of sale product template item variant pos product variant pos product template pos multiple product variants',
     "description": """This apps allows users to select product from 
