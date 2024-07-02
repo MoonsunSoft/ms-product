@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_pos_product_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-21 06:47+0000\n"
+"PO-Revision-Date: 2021-12-21 06:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_pos_product_template
+#. openerp-web
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: bi_pos_product_template
+#. openerp-web
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#, python-format
+msgid "Product image"
+msgstr "Imagen del producto"
+
+#. module: bi_pos_product_template
+#. openerp-web
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#, python-format
+msgid "Products Variants"
+msgstr "Variantes de productos"
+
+#. module: bi_pos_product_template
+#. openerp-web
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#, python-format
+msgid "Select Your Variants"
+msgstr "Seleccione sus variantes"
+
+#. module: bi_pos_product_template
+#. openerp-web
+#: code:addons/bi_pos_product_template/static/src/xml/pos_new.xml:0
+#, python-format
+msgid "Variants"
+msgstr "Variantes"

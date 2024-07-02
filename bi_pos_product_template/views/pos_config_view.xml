@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="pos_config_settings_multi_currency">
+		<field name="name">res.config.setting.pos.multi.currency.form.view</field>
+		<field name="model">res.config.settings</field>
+		<field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//block[@id='pos_interface_section']" position="after">
+				<h2>Allow Product Variants Configuration</h2>
+				<div class="row mt16 o_settings_container">
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="allow_product_variants"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_product_variants"/>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 o_setting_box"  invisible="allow_product_variants != 1">
+						<div class="o_setting_left_pane">
+							<field name="allow_alternative_products"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_alternative_products"/>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 o_setting_box" invisible="allow_product_variants != 1">
+						<div class="o_setting_right_pane">
+							<label for="allow_selected_close" string="Allow Selected Or Auto Close From Popup"/>
+							<div class="content-group">
+								<div class="mt16">
+									<field name="allow_selected_close" class="o_light_label" widget="radio"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="product_template_alternative_view" model="ir.ui.view">
+		<field name="name">product.template.alternative.form</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_only_form_view"/>
+		<field name="arch" type="xml">
+			<field name="pos_categ_ids" position="after">
+				<field name="product_ids" widget="many2many_tags"/>
+			</field>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="product_product_form_view_inherit">
+		<field name="name">product.product.inherit.form</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view"/>
+		<field name="arch" type="xml">
+			<field name="barcode" position="after">
+				<field name="product_ids" widget="many2many_tags"/>
+			</field>
+		</field>
+	</record>
+</odoo>
