@@ -1,1 +1,0 @@
-Add minimum and maximum of quantity product in website

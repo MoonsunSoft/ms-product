@@ -1,1 +1,0 @@
-Add many external id for a priduct in ir.model.data
